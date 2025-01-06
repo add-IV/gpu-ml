@@ -1,7 +1,7 @@
-diff --git a/main2.cu b/main.cu
-index 2306e84..2e97326 100644
---- a/main2.cu
-+++ b/main.cu
+diff --git a/./main_mh.cu b/./main.cu
+index 2306e84..072d6f2 100644
+--- a/./main_mh.cu
++++ b/./main.cu
 @@ -71,7 +71,11 @@ __device__ float
  getDistance(float4 a, float4 b)
  {
@@ -50,7 +50,7 @@ index 2306e84..2e97326 100644
 +		float4 elementPosMass = posMass[i];
 +		float3 elementForce = make_float3(0, 0, 0);
 +		float3 elementSpeed = velocity[i];
-+//# pragma unroll 32
++# pragma unroll 1
 +		for (int j = 0; j < numElements; j+=blockDim.x)
 +		shPosMass[threadIdx.x] = posMass[j+threadIdx.x];
 +		__syncthreads();
