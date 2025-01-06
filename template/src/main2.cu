@@ -71,11 +71,7 @@ __device__ float
 getDistance(float4 a, float4 b)
 {
 	// TODO: Calculate distance of two particles
-	float dx = a.x - b.x;
-	float dy = a.y - b.y;
-	float dz = a.z - b.z;
-
-	return sqrtf(dx * dx + dy * dy + dz * dz);
+	return sqrt(a.x*a.x+b.x*b.x+a.y*a.y+b.y*b.y+a.z*a.z+b.z*b.z);
 }
 
 //
@@ -90,10 +86,9 @@ bodyBodyInteraction(float4 bodyA, float4 bodyB, float3 &force)
 		return;
 
 	// TODO: Calc Force
-	float forceValue = -GAMMA * bodyA.w * bodyB.w / (distance * distance);
-	force.x += forceValue * (bodyB.x - bodyA.x) / distance;
-	force.y += forceValue * (bodyB.y - bodyA.y) / distance;
-	force.z += forceValue * (bodyB.z - bodyA.z) / distance;
+	force.x = -GAMMA*bodyA.w*bodyB.w/(distance*distance)*(bodyA.x-bodyB.x)/distance;
+	force.y = -GAMMA*bodyA.w*bodyB.w/(distance*distance)*(bodyA.y-bodyB.y)/distance;
+	force.z = -GAMMA*bodyA.w*bodyB.w/(distance*distance)*(bodyA.z-bodyB.z)/distance;
 }
 
 //
@@ -156,13 +151,15 @@ sharedNbody_Kernel(int numElements, float4 *posMass, float3 *velocity)
 		elementPosMass = posMass[elementId];
 		elementSpeed = velocity[elementId];
 		elementForce = make_float3(0, 0, 0);
-		for(int i = 0; i < numElements; i += blockDim.x){
-			int idx = i + threadIdx.x;
-			shPosMass[threadIdx.x] = posMass[idx];
+		for(int i = 0; i < numElements; i +=blockDim.x){
+			shPosMass[threadIdx.x] = posMass[elementId+i];
 			__syncthreads();
-			for(int j = 0; j < blockDim.x; j++){
-				if(j != elementId){
-					bodyBodyInteraction(elementPosMass, shPosMass[j], elementForce);
+			for (int i = 0; i < blockDim.x; i++)
+			{
+				float4 posMass = shPosMass[i];
+				if (i != elementId)
+				{
+					bodyBodyInteraction(elementPosMass, posMass, elementForce);
 				}
 			}
 			__syncthreads();

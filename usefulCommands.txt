@@ -1,0 +1,18 @@
+My command history that made the nullKernelAsync.cu compile and work...
+  
+cd ex2_by_Andr
+
+conda activate eml
+spack env activate cuda
+spack load cuda@12.4.0
+nvcc --version
+make
+srun --partition exercise-gpu --gres=gpu:1 ./bin/nullKernelAsync
+
+=============
+To run a python script,
+In terminal, run conda activate eml
+In vscode editor, press ctrl+shift+p and find python:select interpreter
+Choose the one with eml (it has libraries installed)
+And run via run and debug 
+
