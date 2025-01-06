@@ -2,5 +2,6 @@
     "files.associations": {
         "*.svx": "markdown",
         "xutility": "cpp"
-    }
+    },
+    "markdown-pdf.headerTemplate": "<div style=\"font-size: 9px; margin-left: 1cm;\"> GPU Computing </span></div> <div style=\"font-size: 9px; margin-left: auto; margin-right: 1cm; \"> <span class='date'></span></div>"
 }

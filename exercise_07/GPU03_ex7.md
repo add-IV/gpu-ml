@@ -1,10 +1,24 @@
 # Discussion
 
+Group gpu03:
+- Fyock, Colin
+- Hlavaty, Moritz Jan
+- Hui, Ka Wong
+- Mironovich, Elizaveta
+- Sizovs, Andrejs
+- Vandermoeten, Frederick David
+
+Completed tasks: 7.1, 7.2
+
+Willingness to present: yes to 7.1, 7.2
+
 ## 7.1 Naive implementation
 
 ![](graph.png)
 
 The performance of the naive implementation is at first stable at around 5ms for very small (<10) particles. However, later on, the performance is roughly linear with the number of particles. For 2^18 particles, the n-Body Computation takes around 4 minutes. This means roughly 2.4 seconds per timestep.
+
+<div style="page-break-after: always;"></div>
 
 ## 7.2 Optimized implementation
 

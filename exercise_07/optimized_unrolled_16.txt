@@ -1,31 +1,3 @@
-***
-*** Starting ...
-***
-***
-*** Using shared memory
-***
-***
-*** Printing Element 0 in iteration 0
-***
-*** Position: < 18.0428944| 8.46930885| 16.8169289> [m]
-*** velocity: <          0|          0|          0> [m/s]
-*** Mass: <1.71463693e+13> [kg]
-***
-***
-*** Grid: 1
-*** Block: 1024
-***
-***
-*** Results:
-***    Num Elements: 2
-***    Num Iterations: 100
-***    Threads per block: 1024
-***    Time to Copy to Device: 1.650339 ms
-***    Copy Bandwidth: 1.93899556e-05 GB/s
-***    Time to Copy from Device: 0.015321 ms
-***    Copy Bandwidth: 0.00208863651 GB/s
-***    Time for n-Body Computation: 237.091597 ms
-***
 ----------------------------------------------------
 ***
 *** Starting ...
@@ -49,11 +21,11 @@
 ***    Num Elements: 4
 ***    Num Iterations: 100
 ***    Threads per block: 1024
-***    Time to Copy to Device: 1.068903 ms
-***    Copy Bandwidth: 5.98744694e-05 GB/s
-***    Time to Copy from Device: 0.01534 ms
-***    Copy Bandwidth: 0.00417209909 GB/s
-***    Time for n-Body Computation: 93.235312 ms
+***    Time to Copy to Device: 1.099544 ms
+***    Copy Bandwidth: 5.82059472e-05 GB/s
+***    Time to Copy from Device: 0.01487 ms
+***    Copy Bandwidth: 0.00430396772 GB/s
+***    Time for n-Body Computation: 93.585035 ms
 ***
 ----------------------------------------------------
 ***
@@ -78,11 +50,11 @@
 ***    Num Elements: 8
 ***    Num Iterations: 100
 ***    Threads per block: 1024
-***    Time to Copy to Device: 0.0255 ms
-***    Copy Bandwidth: 0.00501960784 GB/s
-***    Time to Copy from Device: 0.01484 ms
-***    Copy Bandwidth: 0.00862533693 GB/s
-***    Time for n-Body Computation: 82.317488 ms
+***    Time to Copy to Device: 0.02629 ms
+***    Copy Bandwidth: 0.0048687714 GB/s
+***    Time to Copy from Device: 0.015151 ms
+***    Copy Bandwidth: 0.00844828724 GB/s
+***    Time for n-Body Computation: 81.544784 ms
 ***
 ----------------------------------------------------
 ***
@@ -107,11 +79,11 @@
 ***    Num Elements: 16
 ***    Num Iterations: 100
 ***    Threads per block: 1024
-***    Time to Copy to Device: 0.02795 ms
-***    Copy Bandwidth: 0.00915921288 GB/s
-***    Time to Copy from Device: 0.01489 ms
-***    Copy Bandwidth: 0.0171927468 GB/s
-***    Time for n-Body Computation: 79.137034 ms
+***    Time to Copy to Device: 0.02592 ms
+***    Copy Bandwidth: 0.00987654321 GB/s
+***    Time to Copy from Device: 0.01509 ms
+***    Copy Bandwidth: 0.0169648774 GB/s
+***    Time for n-Body Computation: 91.213855 ms
 ***
 ----------------------------------------------------
 ***
@@ -136,11 +108,11 @@
 ***    Num Elements: 32
 ***    Num Iterations: 100
 ***    Threads per block: 1024
-***    Time to Copy to Device: 0.025931 ms
-***    Copy Bandwidth: 0.0197447071 GB/s
-***    Time to Copy from Device: 0.01578 ms
-***    Copy Bandwidth: 0.0324461343 GB/s
-***    Time for n-Body Computation: 90.227769 ms
+***    Time to Copy to Device: 0.023391 ms
+***    Copy Bandwidth: 0.0218887606 GB/s
+***    Time to Copy from Device: 0.015051 ms
+***    Copy Bandwidth: 0.0340176732 GB/s
+***    Time for n-Body Computation: 76.145347 ms
 ***
 ----------------------------------------------------
 ***
@@ -165,11 +137,11 @@
 ***    Num Elements: 64
 ***    Num Iterations: 100
 ***    Threads per block: 1024
-***    Time to Copy to Device: 0.02686 ms
-***    Copy Bandwidth: 0.0381236039 GB/s
-***    Time to Copy from Device: 0.0153 ms
-***    Copy Bandwidth: 0.0669281046 GB/s
-***    Time for n-Body Computation: 89.123002 ms
+***    Time to Copy to Device: 0.02672 ms
+***    Copy Bandwidth: 0.0383233533 GB/s
+***    Time to Copy from Device: 0.01557 ms
+***    Copy Bandwidth: 0.0657675016 GB/s
+***    Time for n-Body Computation: 88.091684 ms
 ***
 ----------------------------------------------------
 ***
@@ -194,11 +166,11 @@
 ***    Num Elements: 128
 ***    Num Iterations: 100
 ***    Threads per block: 1024
-***    Time to Copy to Device: 0.02447 ms
-***    Copy Bandwidth: 0.0836943196 GB/s
-***    Time to Copy from Device: 0.01486 ms
-***    Copy Bandwidth: 0.13781965 GB/s
-***    Time for n-Body Computation: 73.368748 ms
+***    Time to Copy to Device: 0.02573 ms
+***    Copy Bandwidth: 0.0795958026 GB/s
+***    Time to Copy from Device: 0.01673 ms
+***    Copy Bandwidth: 0.122414824 GB/s
+***    Time for n-Body Computation: 85.588297 ms
 ***
 ----------------------------------------------------
 ***
@@ -223,11 +195,11 @@
 ***    Num Elements: 265
 ***    Num Iterations: 100
 ***    Threads per block: 1024
-***    Time to Copy to Device: 0.02993 ms
-***    Copy Bandwidth: 0.141663882 GB/s
-***    Time to Copy from Device: 0.015981 ms
-***    Copy Bandwidth: 0.265315062 GB/s
-***    Time for n-Body Computation: 85.037279 ms
+***    Time to Copy to Device: 0.02683 ms
+***    Copy Bandwidth: 0.158032054 GB/s
+***    Time to Copy from Device: 0.01577 ms
+***    Copy Bandwidth: 0.268864933 GB/s
+***    Time for n-Body Computation: 85.754543 ms
 ***
 ----------------------------------------------------
 ***
@@ -252,11 +224,11 @@
 ***    Num Elements: 512
 ***    Num Iterations: 100
 ***    Threads per block: 1024
-***    Time to Copy to Device: 0.02755 ms
-***    Copy Bandwidth: 0.297350272 GB/s
-***    Time to Copy from Device: 0.01648 ms
-***    Copy Bandwidth: 0.497087379 GB/s
-***    Time for n-Body Computation: 79.422926 ms
+***    Time to Copy to Device: 0.027431 ms
+***    Copy Bandwidth: 0.298640225 GB/s
+***    Time to Copy from Device: 0.016341 ms
+***    Copy Bandwidth: 0.501315709 GB/s
+***    Time for n-Body Computation: 73.313876 ms
 ***
 ----------------------------------------------------
 ***
@@ -281,11 +253,11 @@
 ***    Num Elements: 1024
 ***    Num Iterations: 100
 ***    Threads per block: 1024
-***    Time to Copy to Device: 0.029871 ms
-***    Copy Bandwidth: 0.548491848 GB/s
-***    Time to Copy from Device: 0.01805 ms
-***    Copy Bandwidth: 0.907700831 GB/s
-***    Time for n-Body Computation: 57.242904 ms
+***    Time to Copy to Device: 0.031331 ms
+***    Copy Bandwidth: 0.522932559 GB/s
+***    Time to Copy from Device: 0.0185 ms
+***    Copy Bandwidth: 0.885621622 GB/s
+***    Time for n-Body Computation: 67.972851 ms
 ***
 ----------------------------------------------------
 ***
@@ -310,11 +282,11 @@
 ***    Num Elements: 2048
 ***    Num Iterations: 100
 ***    Threads per block: 1024
-***    Time to Copy to Device: 0.035121 ms
-***    Copy Bandwidth: 0.933003047 GB/s
-***    Time to Copy from Device: 0.023131 ms
-***    Copy Bandwidth: 1.41662704 GB/s
-***    Time for n-Body Computation: 67.786617 ms
+***    Time to Copy to Device: 0.03293 ms
+***    Copy Bandwidth: 0.995080474 GB/s
+***    Time to Copy from Device: 0.02252 ms
+***    Copy Bandwidth: 1.45506217 GB/s
+***    Time for n-Body Computation: 67.128426 ms
 ***
 ----------------------------------------------------
 ***
@@ -339,11 +311,11 @@
 ***    Num Elements: 4096
 ***    Num Iterations: 100
 ***    Threads per block: 1024
-***    Time to Copy to Device: 0.042671 ms
-***    Copy Bandwidth: 1.53584402 GB/s
-***    Time to Copy from Device: 0.02988 ms
-***    Copy Bandwidth: 2.19330656 GB/s
-***    Time for n-Body Computation: 71.513187 ms
+***    Time to Copy to Device: 0.041911 ms
+***    Copy Bandwidth: 1.5636945 GB/s
+***    Time to Copy from Device: 0.03119 ms
+***    Copy Bandwidth: 2.10118628 GB/s
+***    Time for n-Body Computation: 70.764907 ms
 ***
 ----------------------------------------------------
 ***
@@ -368,11 +340,11 @@
 ***    Num Elements: 8192
 ***    Num Iterations: 100
 ***    Threads per block: 1024
-***    Time to Copy to Device: 0.056501 ms
-***    Copy Bandwidth: 2.31981735 GB/s
-***    Time to Copy from Device: 0.050051 ms
-***    Copy Bandwidth: 2.61876886 GB/s
-***    Time for n-Body Computation: 70.042527 ms
+***    Time to Copy to Device: 0.067881 ms
+***    Copy Bandwidth: 1.9309085 GB/s
+***    Time to Copy from Device: 0.050861 ms
+***    Copy Bandwidth: 2.57706298 GB/s
+***    Time for n-Body Computation: 70.13431 ms
 ***
 ----------------------------------------------------
 ***
@@ -397,11 +369,11 @@
 ***    Num Elements: 16384
 ***    Num Iterations: 100
 ***    Threads per block: 1024
-***    Time to Copy to Device: 0.082361 ms
-***    Copy Bandwidth: 3.18286568 GB/s
-***    Time to Copy from Device: 0.093122 ms
-***    Copy Bandwidth: 2.81505981 GB/s
-***    Time for n-Body Computation: 77.370701 ms
+***    Time to Copy to Device: 0.082892 ms
+***    Copy Bandwidth: 3.16247648 GB/s
+***    Time to Copy from Device: 0.092101 ms
+***    Copy Bandwidth: 2.8462666 GB/s
+***    Time for n-Body Computation: 77.574886 ms
 ***
 ----------------------------------------------------
 ***
@@ -426,11 +398,11 @@
 ***    Num Elements: 32768
 ***    Num Iterations: 100
 ***    Threads per block: 1024
-***    Time to Copy to Device: 0.146213 ms
-***    Copy Bandwidth: 3.58578239 GB/s
-***    Time to Copy from Device: 0.171683 ms
-***    Copy Bandwidth: 3.0538143 GB/s
-***    Time for n-Body Computation: 84.65376 ms
+***    Time to Copy to Device: 0.142053 ms
+***    Copy Bandwidth: 3.69079147 GB/s
+***    Time to Copy from Device: 0.171293 ms
+***    Copy Bandwidth: 3.06076722 GB/s
+***    Time for n-Body Computation: 85.7516 ms
 ***
 ----------------------------------------------------
 ***
@@ -455,11 +427,11 @@
 ***    Num Elements: 65536
 ***    Num Iterations: 100
 ***    Threads per block: 1024
-***    Time to Copy to Device: 0.271174 ms
-***    Copy Bandwidth: 3.86680139 GB/s
-***    Time to Copy from Device: 0.324944 ms
-***    Copy Bandwidth: 3.22694372 GB/s
-***    Time for n-Body Computation: 102.796488 ms
+***    Time to Copy to Device: 0.278914 ms
+***    Copy Bandwidth: 3.75949576 GB/s
+***    Time to Copy from Device: 0.326084 ms
+***    Copy Bandwidth: 3.21566222 GB/s
+***    Time for n-Body Computation: 101.049414 ms
 ***
 ----------------------------------------------------
 ***
@@ -484,11 +456,11 @@
 ***    Num Elements: 131072
 ***    Num Iterations: 100
 ***    Threads per block: 1024
-***    Time to Copy to Device: 0.500019 ms
-***    Copy Bandwidth: 4.19414462 GB/s
-***    Time to Copy from Device: 0.511009 ms
-***    Copy Bandwidth: 4.10394337 GB/s
-***    Time for n-Body Computation: 184.067385 ms
+***    Time to Copy to Device: 0.411817 ms
+***    Copy Bandwidth: 5.09243669 GB/s
+***    Time to Copy from Device: 0.52012 ms
+***    Copy Bandwidth: 4.03205414 GB/s
+***    Time for n-Body Computation: 186.383137 ms
 ***
 ----------------------------------------------------
 ***
@@ -513,11 +485,11 @@
 ***    Num Elements: 262144
 ***    Num Iterations: 100
 ***    Threads per block: 1024
-***    Time to Copy to Device: 0.7869 ms
-***    Copy Bandwidth: 5.33016139 GB/s
-***    Time to Copy from Device: 0.858921 ms
-***    Copy Bandwidth: 4.88322442 GB/s
-***    Time for n-Body Computation: 326.668328 ms
+***    Time to Copy to Device: 0.78733 ms
+***    Copy Bandwidth: 5.32725033 GB/s
+***    Time to Copy from Device: 0.860332 ms
+***    Copy Bandwidth: 4.87521561 GB/s
+***    Time for n-Body Computation: 318.812319 ms
 ***
 ----------------------------------------------------
 ***
@@ -542,11 +514,11 @@
 ***    Num Elements: 524288
 ***    Num Iterations: 100
 ***    Threads per block: 1024
-***    Time to Copy to Device: 1.329844 ms
-***    Copy Bandwidth: 6.30796394 GB/s
-***    Time to Copy from Device: 1.556407 ms
-***    Copy Bandwidth: 5.38972647 GB/s
-***    Time for n-Body Computation: 542.736606 ms
+***    Time to Copy to Device: 1.315474 ms
+***    Copy Bandwidth: 6.376871 GB/s
+***    Time to Copy from Device: 1.616799 ms
+***    Copy Bandwidth: 5.18840499 GB/s
+***    Time for n-Body Computation: 544.775163 ms
 ***
 ----------------------------------------------------
 ***
@@ -571,10 +543,10 @@
 ***    Num Elements: 1048576
 ***    Num Iterations: 100
 ***    Threads per block: 1024
-***    Time to Copy to Device: 2.585663 ms
-***    Copy Bandwidth: 6.48855477 GB/s
-***    Time to Copy from Device: 2.943808 ms
-***    Copy Bandwidth: 5.69915429 GB/s
-***    Time for n-Body Computation: 1108.12679 ms
+***    Time to Copy to Device: 2.567965 ms
+***    Copy Bandwidth: 6.53327284 GB/s
+***    Time to Copy from Device: 2.941599 ms
+***    Copy Bandwidth: 5.70343408 GB/s
+***    Time for n-Body Computation: 1105.43357 ms
 ***
 ----------------------------------------------------
