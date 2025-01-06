@@ -147,29 +147,23 @@ sharedNbody_Kernel(int numElements, float4 *posMass, float3 *velocity)
 
 	extern __shared__ float4 shPosMass[];
 
-	float4 elementPosMass;
-	float3 elementForce;
-	float3 elementSpeed;
-
-	if (elementId < numElements)
-	{
-		elementPosMass = posMass[elementId];
-		elementSpeed = velocity[elementId];
-		elementForce = make_float3(0, 0, 0);
-		for(int i = 0; i < numElements; i += blockDim.x){
-			int idx = i + threadIdx.x;
-			shPosMass[threadIdx.x] = posMass[idx];
-			__syncthreads();
-			for(int j = 0; j < blockDim.x; j++){
-				if(j != elementId){
-					bodyBodyInteraction(elementPosMass, shPosMass[j], elementForce);
-				}
+	for(int i = elementId; i < numElements; i += blockDim.x*gridDim.x){
+		float4 elementPosMass = posMass[i];
+		float3 elementForce = make_float3(0, 0, 0);
+		float3 elementSpeed = velocity[i];
+# pragma unroll 16
+		for (int j = 0; j < numElements; j+=blockDim.x)
+		shPosMass[threadIdx.x] = posMass[j+threadIdx.x];
+		__syncthreads();
+		for(size_t k = 0; k < blockDim.x; k++){
+			if (k != elementId)
+			{
+				bodyBodyInteraction(elementPosMass, shPosMass[k], elementForce);
 			}
-			__syncthreads();
 		}
+		__syncthreads();
 		calculateSpeed(elementPosMass.w, elementSpeed, elementForce);
-
-		velocity[elementId] = elementSpeed;
+		velocity[i] = elementSpeed;
 	}
 	/*TODO Kernel Code*/
 }
@@ -231,6 +225,14 @@ int main(int argc, char *argv[])
 	ChTimer kernelTimer;
 
 	bool shared = chCommandLineGetBool("shared", argc, argv);
+
+	if (shared)
+	{
+		std::cout << "***" << std::endl
+				  << "*** Using shared memory" << std::endl
+				  << "***" << std::endl;
+	}
+
 	//
 	// Allocate Memory
 	//

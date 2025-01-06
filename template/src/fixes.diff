@@ -1,0 +1,91 @@
+diff --git a/main2.cu b/main.cu
+index 2306e84..2e97326 100644
+--- a/main2.cu
++++ b/main.cu
+@@ -71,7 +71,11 @@ __device__ float
+ getDistance(float4 a, float4 b)
+ {
+ 	// TODO: Calculate distance of two particles
+-	return sqrt(a.x*a.x+b.x*b.x+a.y*a.y+b.y*b.y+a.z*a.z+b.z*b.z);
++	float dx = a.x - b.x;
++	float dy = a.y - b.y;
++	float dz = a.z - b.z;
++
++	return sqrtf(dx * dx + dy * dy + dz * dz);
+ }
+ 
+ //
+@@ -86,9 +90,10 @@ bodyBodyInteraction(float4 bodyA, float4 bodyB, float3 &force)
+ 		return;
+ 
+ 	// TODO: Calc Force
+-	force.x = -GAMMA*bodyA.w*bodyB.w/(distance*distance)*(bodyA.x-bodyB.x)/distance;
+-	force.y = -GAMMA*bodyA.w*bodyB.w/(distance*distance)*(bodyA.y-bodyB.y)/distance;
+-	force.z = -GAMMA*bodyA.w*bodyB.w/(distance*distance)*(bodyA.z-bodyB.z)/distance;
++	float forceValue = -GAMMA * bodyA.w * bodyB.w / (distance * distance);
++	force.x += forceValue * (bodyB.x - bodyA.x) / distance;
++	force.y += forceValue * (bodyB.y - bodyA.y) / distance;
++	force.z += forceValue * (bodyB.z - bodyA.z) / distance;
+ }
+ 
+ //
+@@ -142,31 +147,23 @@ sharedNbody_Kernel(int numElements, float4 *posMass, float3 *velocity)
+ 
+ 	extern __shared__ float4 shPosMass[];
+ 
+-	float4 elementPosMass;
+-	float3 elementForce;
+-	float3 elementSpeed;
+-
+-	if (elementId < numElements)
+-	{
+-		elementPosMass = posMass[elementId];
+-		elementSpeed = velocity[elementId];
+-		elementForce = make_float3(0, 0, 0);
+-		for(int i = 0; i < numElements; i +=blockDim.x){
+-			shPosMass[threadIdx.x] = posMass[elementId+i];
+-			__syncthreads();
+-			for (int i = 0; i < blockDim.x; i++)
++	for(int i = elementId; i < numElements; i += blockDim.x*gridDim.x){
++		float4 elementPosMass = posMass[i];
++		float3 elementForce = make_float3(0, 0, 0);
++		float3 elementSpeed = velocity[i];
++//# pragma unroll 32
++		for (int j = 0; j < numElements; j+=blockDim.x)
++		shPosMass[threadIdx.x] = posMass[j+threadIdx.x];
++		__syncthreads();
++		for(size_t k = 0; k < blockDim.x; k++){
++			if (k != elementId)
+ 			{
+-				float4 posMass = shPosMass[i];
+-				if (i != elementId)
+-				{
+-					bodyBodyInteraction(elementPosMass, posMass, elementForce);
+-				}
++				bodyBodyInteraction(elementPosMass, shPosMass[k], elementForce);
+ 			}
+-			__syncthreads();
+ 		}
++		__syncthreads();
+ 		calculateSpeed(elementPosMass.w, elementSpeed, elementForce);
+-
+-		velocity[elementId] = elementSpeed;
++		velocity[i] = elementSpeed;
+ 	}
+ 	/*TODO Kernel Code*/
+ }
+@@ -228,6 +225,14 @@ int main(int argc, char *argv[])
+ 	ChTimer kernelTimer;
+ 
+ 	bool shared = chCommandLineGetBool("shared", argc, argv);
++
++	if (shared)
++	{
++		std::cout << "***" << std::endl
++				  << "*** Using shared memory" << std::endl
++				  << "***" << std::endl;
++	}
++
+ 	//
+ 	// Allocate Memory
+ 	//
