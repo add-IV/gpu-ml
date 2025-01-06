@@ -151,7 +151,7 @@ sharedNbody_Kernel(int numElements, float4 *posMass, float3 *velocity)
 		float4 elementPosMass = posMass[i];
 		float3 elementForce = make_float3(0, 0, 0);
 		float3 elementSpeed = velocity[i];
-# pragma unroll 16
+# pragma unroll 1
 		for (int j = 0; j < numElements; j+=blockDim.x)
 		shPosMass[threadIdx.x] = posMass[j+threadIdx.x];
 		__syncthreads();

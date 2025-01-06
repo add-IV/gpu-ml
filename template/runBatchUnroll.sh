@@ -2,7 +2,7 @@
 
 ############# optimized version with unroll (uncomment unroll in main.cu first) #############
 # Define output file
-OUTPUT_FILE="./optimized_unrolled_16.txt"
+OUTPUT_FILE="./optimized_unrolled_1.txt"
 
 # Clear output file if it exists
 > $OUTPUT_FILE
